@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>College Event Management</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background-color:#f2f2f2;
+}
+
+.container{
+background:white;
+padding:20px;
+margin:40px auto;
+width:400px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+button{
+padding:8px 15px;
+margin-top:10px;
+}
+
+ul{
+text-align:left;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>College Event Management</h2>
+
+<input type="text" id="eventName" placeholder="Enter Event Name">
+
+<br>
+
+<button onclick="addEvent()">Add Event</button>
+
+<h3>Event List</h3>
+
+<ul id="eventList"></ul>
+
+</div>
+
+<script>
+
+function addEvent(){
+
+let event = document.getElementById("eventName").value;
+
+if(event == ""){
+alert("Enter event name");
+return;
+}
+
+let li = document.createElement("li");
+li.textContent = event;
+
+document.getElementById("eventList").appendChild(li);
+
+document.getElementById("eventName").value="";
+
+}
+
+</script>
+
+</body>
+</html>
